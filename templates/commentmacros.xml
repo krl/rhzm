@@ -1,0 +1,19 @@
+<div>
+  {% macro box(action, uri) -%}
+    <form action="{{action}}" method="post" id="{{hash(uri)}}" class="hidden">
+      <input name="type" type="hidden" value="comment"/>
+      <input name="reply_to" type="hidden" value="{{uri}}"/>
+      <textarea name="body"></textarea><br/>
+      <a href="#" onclick="$('{{hash(uri)}}').submit()">save</a>,
+      <a href="#" onclick="return hide('{{hash(uri)}}')">cancel</a>
+    </form>
+  {%- endmacro %}
+
+  {% macro render(action, uri) -%}
+    <div class="indent">
+    {% for x in comments(this.uri) %}
+      {{ x.render() }}
+    {% endfor %}
+  </div>
+  {%- endmacro %}
+</div>

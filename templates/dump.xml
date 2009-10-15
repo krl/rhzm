@@ -1,0 +1,12 @@
+<div>
+  <h1>Dump</h1>
+  <table>
+  {% for x in triples %}
+    <tr class="{{x['objtype']}}">
+      <td>{{x['sub']}}</td>
+      <td>{{x['prd']}}</td>
+      <td>{{x['obj']}}</td>
+    </tr>
+  {% endfor %}
+  </table>
+</div>

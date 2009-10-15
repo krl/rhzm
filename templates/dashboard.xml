@@ -1,0 +1,11 @@
+<div>
+  <h1>Dashboard</h1>
+  <form action="/dashboard" method="post">
+    update:
+    <input name="type" type="hidden" value="note"/>
+    <input type="text" name="body"/>
+  </form>
+  {% for x in notes %}
+    {{ x.render() }}
+  {% endfor %}
+</div>

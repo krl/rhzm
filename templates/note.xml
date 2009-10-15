@@ -1,0 +1,12 @@
+<div>  
+  {% import 'commentmacros.xml' as comments with context %}
+  <div class="notebody clear">
+    <img src="{{this.maker.depiction}}" class="pic"/>
+    <p><b>{{this.maker.name}}:</b> {{this.body}}</p>
+    <div class="submenu">
+      <a href="#" onclick="return show('{{hash(this.uri)}}')">comment</a><br/>
+    </div>
+  </div>
+  {{ comments.box('/dashboard', this.uri) }}
+  {{ comments.render('/dashboard', this.uri) }}
+</div>
