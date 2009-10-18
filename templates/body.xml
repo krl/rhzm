@@ -9,9 +9,9 @@
   </head>
   <body>
     <div id="menu">
-      <a href="/foaf">foaf</a><br/>
-      <a href="/dashboard">dashboard</a><br/>
-      <a href="/dump">dump</a><br/>
+      {% for k, v in modulelist.iteritems() %}
+        <a href="{{k}}">{{k[1:]}}</a><br/>
+      {% endfor %}
     </div>
     <div id="content">
       {{content}}
